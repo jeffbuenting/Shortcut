@@ -4,6 +4,10 @@
 # moves the shortcuts on the desktop to the correct dated folder
 #-------------------------------------------------------------------------
 
+Param (
+    [String]$UserDesktop
+)
+
 #-------------------------------------------------------------------------
 # Main
 #-------------------------------------------------------------------------
@@ -23,7 +27,7 @@ if ( Get-ChildItem -Path "p:\links" -Filter $Date ) {
 }
 
 # ----- Move .lnk files
-Get-Item -path "c:\Users\kwbre\Desktop\*.url" | foreach {
+Get-Item -path "$UserDesktop\*.url" | foreach {
 	Write-Host "p:\links\$Date\$($_.Name)"
 	if ( Test-Path "p:\links\$Date\$($_.Name)" ) {
 #			Write-Host $_.name -ForegroundColor red
