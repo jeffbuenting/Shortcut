@@ -37,15 +37,17 @@ Function New-Shortcut {
     
     Begin {
         Write-Verbose "Saving Shortcut at path $Path"
+        
     }
 
     Process {
         Foreach ( $L in $Link ) {
             write-verbose $L.Length
+            Write-Verbose "Link = $Link"
                         
             if ( $L -ne $Null -and $L.Length -ne 0 ) {
                     if ( -Not $Name ) { 
-                        $L -match 'http:\/\/([^\/]*)' | out-Null
+                        $L -match 'https?:\/\/([^\/]*)' | out-Null
                         $Name = $Matches[1]
                     }
 
