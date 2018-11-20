@@ -14,7 +14,7 @@
         # Main
         #-------------------------------------------------------------------------
 
-        #$Userdesktop = 'C:\users\tracipantygirl\Desktop'
+ 
 
         write-Host "Processing $UserDesktop"
 
